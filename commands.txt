@@ -1,0 +1,14 @@
+1) Создать через UI базуданных Online_store
+2) Создай таблицу так CREATE TABLE Products (
+	product_id SERIAL,
+    price INT,
+    product_name varchar(80),
+	product_description varchar(500),
+    link_to_the_picture varchar(500)
+);
+3) Обнови таблицу 
+4) Вставь данные INSERT INTO products (price, product_name, product_description, link_to_the_picture) VALUES 
+(1200, 'War and peace', 'русский исторический (и немного фантастический) роман Льва Толстого, опубликованный в 1865-1869 годах.', 'img/1.jpg'),
+(1332, 'The master and margarita', 'роман Михаила Афанасьевича Булгакова, работа над которым началась в декабре 1928 года и продолжалась вплоть до смерти писателя в марте 1940 года.', 'img/2.jpg')
+
+5) Проверь select * from products
