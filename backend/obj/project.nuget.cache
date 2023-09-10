@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "vt8rE++Zb5/P5TFIKmMwrvcgsBuizslwEG+xqgM3s5/eh+UelCQElfoC6pPy+U4Tu5z0zlo3wmCcCaM11OBIlQ==",
+  "dgSpecHash": "Obyc3TnRJX+kCFqRFHrja/d6wRMkGLqGN2Gq+aXq+B4w40J3VYa9g6lJ7qaY+QBjvXlPUyzjbZGbWHOHi48vxA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\backend.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Ryzen\\source\\repos\\projectF\\projectF\\projectF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ryzen\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
+    "C:\\Users\\Ryzen\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Ryzen\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Ryzen\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Ryzen\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Ryzen\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Ryzen\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
