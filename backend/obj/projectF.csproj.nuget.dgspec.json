@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ryzen\\source\\repos\\projectF\\projectF\\projectF.csproj": {}
+    "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\projectF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ryzen\\source\\repos\\projectF\\projectF\\projectF.csproj": {
+    "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\projectF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ryzen\\source\\repos\\projectF\\projectF\\projectF.csproj",
+        "projectUniqueName": "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\projectF.csproj",
         "projectName": "projectF",
-        "projectPath": "C:\\Users\\Ryzen\\source\\repos\\projectF\\projectF\\projectF.csproj",
+        "projectPath": "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\projectF.csproj",
         "packagesPath": "C:\\Users\\Ryzen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ryzen\\source\\repos\\projectF\\projectF\\obj\\",
+        "outputPath": "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -25,7 +25,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -47,6 +46,24 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -72,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
