@@ -1,5 +1,7 @@
+using backend.Data;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace backend.Controllers
 {
@@ -7,15 +9,14 @@ namespace backend.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
+        private readonly DataContext _context;
+        public ProductController(DataContext context) {
+            _context = context;
+        }
         [HttpGet]
         public async Task<ActionResult<List<Product>>> getProduct()
         {
-            return new List<Product> { new Product {
-                Price = 10,
-                ProductName = "sddssd",
-                ProductDescription = "sdfsd",
-                LinkToThePicture = "dssdfsdf"
-            } };
+            return Ok(await _context.Product.ToArrayAsync());
         }
     }
 }
