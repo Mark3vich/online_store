@@ -15,10 +15,14 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> searchProduct(string searchString)
-        {
+        public async Task<ActionResult<List<Product>>> SearchProduct(string searchString = "")
+        {   
+            if (string.IsNullOrEmpty(searchString) || searchString == "")
+            {
+                return Ok("Empty");
+            }
             searchString = searchString.Trim();
-            var products = _context.Product.Where(product => product.ProductName == searchString);
+            var products = _context.Product.Where(product => EF.Functions.Like(product.ProductName, $"%{searchString}%"));
             return Ok(products);
         }
     }
