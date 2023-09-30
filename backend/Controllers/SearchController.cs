@@ -2,6 +2,7 @@ using backend.Data;
 using backend.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace backend.Controllers
 {
@@ -18,7 +19,7 @@ namespace backend.Controllers
         public async Task<ActionResult<List<Product>>> SearchProduct(string searchString = "")
         {   
             // Исключения, которые приводят сразу к выводу ошибки 
-            if (string.IsNullOrEmpty(searchString) || searchString == "")
+            if (searchString == "")
             {
                 return Ok("Empty");
             }
@@ -27,17 +28,17 @@ namespace backend.Controllers
             searchString = searchString.Trim();
             searchString = searchString.ToLower();
             searchString = char.ToUpper(searchString[0]) + searchString.Substring(1);
-            // Console.WriteLine(searchString);
+            searchString = Regex.Replace(searchString, @"\s+", " ");
             
             // Сам запрос
             var products = _context.Product.Where(product => EF.Functions.Like(product.ProductName, $"%{searchString}%"));
-            
+
             // Если запрос прошел не успешно 
             if(!products.Any()) return Ok("NotFound");
 
             // Строчка под вопросом 
             await _context.SaveChangesAsync();
-           
+
             return Ok(products);
         }
     }

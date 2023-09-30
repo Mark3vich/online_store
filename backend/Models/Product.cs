@@ -7,5 +7,6 @@ namespace backend.Models
         public string ProductName {get; set;} = string.Empty;
         public string ProductDescription {get; set;} = string.Empty;
         public string LinkToThePicture {get; set;} = string.Empty;
+        public List<string>? Hashtags {get; set;}
     }
 }
