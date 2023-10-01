@@ -39,6 +39,7 @@ namespace backend.Controllers
             dbProduct.ProductName = product.ProductName;
             dbProduct.ProductDescription = product.ProductDescription;
             dbProduct.LinkToThePicture = product.LinkToThePicture;
+            dbProduct.Hashtags = product.Hashtags;
 
             await _context.SaveChangesAsync();
             return Ok(await _context.Product.ToArrayAsync());
