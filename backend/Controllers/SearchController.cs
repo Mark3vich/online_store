@@ -16,7 +16,7 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> SearchProduct(string searchString = "")
+        public async Task<ActionResult<List<MobilePhones>>> SearchMobilePhones(string searchString = "")
         {   
             // Исключения, которые приводят сразу к выводу ошибки 
             if (searchString == "")
@@ -31,7 +31,7 @@ namespace backend.Controllers
             searchString = Regex.Replace(searchString, @"\s+", " ");
             
             // Сам запрос
-            var products = _context.Product.Where(product => EF.Functions.Like(product.ProductName, $"%{searchString}%"));
+            var products = _context.MobilePhones.Where(product => EF.Functions.Like(product.ProductName, $"%{searchString}%"));
 
             // Если запрос прошел не успешно 
             if(!products.Any()) return Ok("NotFound");
