@@ -10,6 +10,6 @@ namespace backend.Models
         public string Description {get; set;} = string.Empty;
         public string Manufacturer {get; set;} = string.Empty;
         public string Colour {get; set;} = string.Empty;
-        public List<string>? Hashtags { get; set; }
+        public List<string>? Hashtags {get; set;} 
     }
 }

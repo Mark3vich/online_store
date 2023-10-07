@@ -8,6 +8,5 @@ namespace backend.Data
         public DataContext(DbContextOptions<DataContext> options): base(options) {}
 
         public DbSet<MobilePhones> MobilePhones => Set<MobilePhones>();
-
     }
 }

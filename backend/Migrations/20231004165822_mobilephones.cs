@@ -27,8 +27,7 @@ namespace backend.Migrations
                     Quantity = table.Column<int>(type: "integer", nullable: false),
                     Description = table.Column<string>(type: "text", nullable: false),
                     Manufacturer = table.Column<string>(type: "text", nullable: false),
-                    Colour = table.Column<string>(type: "text", nullable: false),
-                    Hashtags = table.Column<List<string>>(type: "text[]", nullable: true)
+                    Colour = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,6 +47,7 @@ namespace backend.Migrations
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Hashtags = table.Column<List<string>>(type: "text[]", nullable: true),
                     LinkToThePicture = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<int>(type: "integer", nullable: false),
                     ProductDescription = table.Column<string>(type: "text", nullable: false),

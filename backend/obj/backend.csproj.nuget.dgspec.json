@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\backend.csproj": {}
+    "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\backend.csproj": {
+    "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\backend.csproj",
-        "packagesPath": "C:\\Users\\Ryzen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ryzen\\project1\\course_paper\\backend\\obj\\",
+        "projectPath": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\backend.csproj",
+        "packagesPath": "C:\\Users\\79202\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Ryzen\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\79202\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,12 +43,6 @@
               "version": "[7.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
@@ -87,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
