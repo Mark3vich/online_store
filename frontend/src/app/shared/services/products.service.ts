@@ -33,7 +33,7 @@ export class ProductsService {
 
   public deleteProduct(product: Products): Observable<Products[]> {
     return this.http.delete<Products[]>(
-      `${environments.apiUrl}/${this.url}/${product.Id}`
+      `${environments.apiUrl}/${this.url}/${product.id}`
     );
   }
 }
