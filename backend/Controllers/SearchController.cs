@@ -28,8 +28,8 @@ namespace backend.Controllers
             // Преобразования строки к тому или иному виду 
             searchString = searchString.Trim();
             searchString = searchString.ToLower();
-            //searchString = char.ToUpper(searchString[0]) + searchString.Substring(1);
             searchString = Regex.Replace(searchString, @"\s+", " ");
+            
             // Сам запрос
             var products = _context.MobilePhones.Where(p => p.ProductName.ToLower().Contains(searchString));
 

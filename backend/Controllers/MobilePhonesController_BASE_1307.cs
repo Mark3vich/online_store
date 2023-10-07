@@ -15,16 +15,9 @@ namespace backend.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<MobilePhones>>> GetMobilePhonesLimited()
+        public async Task<ActionResult<List<MobilePhones>>> GetMobilePhones()
         {
-<<<<<<< HEAD
-            //Возвращаем всё
-            //return Ok(await _context.MobilePhones.ToArrayAsync());
-            var limitedRequest = _context.MobilePhones.OrderByDescending(t => t.Article).Take(1000).ToArrayAsync();
-=======
-            var limitedRequest = _context.MobilePhones.OrderByDescending(t => t.Article).Take(20).ToArrayAsync();
->>>>>>> 781d7ca2d11950fe58ae136f971d1876d83437d9
-            return Ok(await limitedRequest);
+            return Ok(await _context.MobilePhones.ToArrayAsync());
         }
 
         [HttpPost]
@@ -48,19 +41,18 @@ namespace backend.Controllers
             dbProduct.Description = mobilePhones.Description;
             dbProduct.Manufacturer = mobilePhones.Manufacturer;
             dbProduct.Colour = mobilePhones.Colour;
-            dbProduct.Hashtags = mobilePhones.Hashtags;
 
             await _context.SaveChangesAsync();
             return Ok(await _context.MobilePhones.ToArrayAsync());
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<List<MobilePhones>>> DeleteMobilePhones(int id)
+        public async Task<ActionResult<List<MobilePhones>>> DeleteUsers(int id)
         {
             var dbProduct = await _context.MobilePhones.FindAsync(id);
             if (dbProduct == null)
             {
-                return BadRequest("MobilePhones not found");
+                return BadRequest("Product not found");
             }
             _context.MobilePhones.Remove(dbProduct);
             await _context.SaveChangesAsync();

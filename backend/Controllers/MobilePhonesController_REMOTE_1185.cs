@@ -17,13 +17,7 @@ namespace backend.Controllers
         [HttpGet]
         public async Task<ActionResult<List<MobilePhones>>> GetMobilePhonesLimited()
         {
-<<<<<<< HEAD
-            //Возвращаем всё
-            //return Ok(await _context.MobilePhones.ToArrayAsync());
-            var limitedRequest = _context.MobilePhones.OrderByDescending(t => t.Article).Take(1000).ToArrayAsync();
-=======
             var limitedRequest = _context.MobilePhones.OrderByDescending(t => t.Article).Take(20).ToArrayAsync();
->>>>>>> 781d7ca2d11950fe58ae136f971d1876d83437d9
             return Ok(await limitedRequest);
         }
 

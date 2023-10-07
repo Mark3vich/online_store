@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { Products } from '../models/products';
+
 import { environments } from 'src/app/environments/environments';
+import { Products } from '../models/products';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
-  private url: string = "Product";
+  private url: string = "MobilePhones";
   constructor(private http: HttpClient) { }
 
   public getProduct(): Observable<Products[]> { 
@@ -32,7 +33,7 @@ export class ProductsService {
 
   public deleteProduct(product: Products): Observable<Products[]> {
     return this.http.delete<Products[]>(
-      `${environments.apiUrl}/${this.url}/${product.id}`
+      `${environments.apiUrl}/${this.url}/${product.Id}`
     );
   }
 }

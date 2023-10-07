@@ -1,7 +1,11 @@
 export class Products { 
     id?: number;
-    price: number = 0;
+    article: number = 0;
     productName: string = "";
-    productDescription: string = "";
-    linkToThePicture: string = "";
+    price: number = 0;
+    quantity: number = 0;
+    description: string = "";
+    manufacturer: string = "";
+    colour: string = "";
+    hashtags?: Array<string> = [];
 }

@@ -1,1 +1,0 @@
-INSERT INTO public."Product"("Id", "Price", "ProductName", "ProductDescription", "LinkToThePicture") VALUES () ;
