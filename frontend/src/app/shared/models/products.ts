@@ -7,5 +7,5 @@ export class Products {
     description: string = "";
     manufacturer: string = "";
     colour: string = "";
-    hashtags?: Array<string> = [];
+    hashtags: string = "";
 }

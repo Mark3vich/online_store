@@ -10,7 +10,11 @@ import { Observable } from 'rxjs/internal/Observable';
 export class SearchService {
   private url: string = "Search";
   constructor(private http: HttpClient) { }
-  public getProduct(param: string | undefined): Observable<Products[]> { 
+  public getProduct(param: string): Observable<Products[]> { 
+    param = param.replace(/\s/g, "");
+    if(param[0] === "#") {
+      param = param.replace("#", "%23");
+    }
     return this.http.get<Products[]>(`${environments.apiUrl}/${this.url}?searchString=${param}`);
   }
 }

@@ -1,29 +1,33 @@
 <div class="header">
     <div class="block">
-        <input class="input_product" [(ngModel)]="product" placeholder="Поиск"/>
-        <button class="bubbly-button" (click)="sendProductData(product);">Поиск</button>
+        <input class="input_product" [(ngModel)]="product" placeholder="Поиск" />
+        <button [className]="condition ? 'bubbly-button animate' : 'bubbly-button'"
+            (click)="sendProductData(product);">Поиск</button>
     </div>
 </div>
-<div> 
-    <div class="card" *ngFor="let product of products">
-        <div class="price">{{product.article}}</div>
-        <div class="product_name">{{product.productName}}</div>
-        <div class="product_description">{{product.price}}</div>
-        <div class="">{{product.quantity}}</div>
-        <div class="">{{product.description}}</div>
-        <div class="">{{product.manufacturer}}</div>
-        <div class="">{{product.colour}}</div>
-        <div class="">{{product.hashtags}}</div>
+
+<div class="container">
+    <div [className]="enablingTheContainer ? 'filtering_panel' : 'none'">
+        <div class="block_price_from_up">
+            <div class="price">Цена:</div>
+            <div class="container_price">
+                <input class="from_what_price" placeholder="От " />
+                <input class="up_to_what_price" placeholder="До " />
+            </div>
+            <button [className]="condition ? 'bubbly-button resetting_certain_styles animate' : 'bubbly-button resetting_certain_styles'"
+            (click)="changeTheButtonState();">Применить</button>
+        </div>
+    </div>
+    <div>
+        <div class="card" *ngFor="let product of products">
+            <div class="">{{product.article}}</div>
+            <div class="">{{product.productName}}</div>
+            <div class="">{{product.price}}</div>
+            <div class="">{{product.quantity}}</div>
+            <div class="">{{product.description}}</div>
+            <div class="">{{product.manufacturer}}</div>
+            <div class="">{{product.colour}}</div>
+            <div class="">{{product.hashtags}}</div>
+        </div>
     </div>
 </div>
-<script>
-    var animateButton = function(e) {
-    e.preventDefault;
-    //reset animation
-    e.target.classList.remove('animate');
-    e.target.classList.add('animate');
-    setTimeout(function(){
-      e.target.classList.remove('animate');
-    },700);
-  };
-</script>

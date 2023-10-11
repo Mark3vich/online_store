@@ -30,7 +30,7 @@ namespace backend.Controllers
             searchString = Regex.Replace(searchString, @"\s+", " ");
             
             // Сам запрос
-            var products = _context.MobilePhones.Where(p => p.ProductName.ToLower().Contains(searchString));
+            var products = _context.MobilePhones.Where(p => p.ProductName.ToLower().Contains(searchString) || p.Hashtags.ToLower().Contains(searchString));
 
             // Если запрос прошел не успешно 
             if(!products.Any()) return Ok("NotFound");
