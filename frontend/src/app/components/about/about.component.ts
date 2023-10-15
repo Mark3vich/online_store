@@ -45,9 +45,18 @@ export class AboutComponent {
     return (price >= fromWhatPrice && price <= upToWhatPrice) ? true : false;
   }
 
-  // sortDataInAscendingOrder() {
-
-  // }
+  sortDataInAscendingOrder(array: Products[]) {
+    for(let i = 0; i < array.length; i++) {
+      let current: number = array[i].price;  
+      let j: number = i - 1; 
+      while ((j > -1) && (current < array[j].price)) { 
+        array[j+1].price = array[j].price; 
+        j--; 
+      } 
+      array[j+1].price = current; 
+    }
+    return array;
+  }
 
   priceFiltering(): void {
     this.changeTheButtonState();
@@ -58,7 +67,7 @@ export class AboutComponent {
       this.isThePriceSuitable(this.fromWhatPrice, this.upToWhatPrice, p.price) ? _filteredListOfProducts.push(p) : null
     );
 
-    this.filteredListOfProducts = _filteredListOfProducts;
+    this.filteredListOfProducts = this.sortDataInAscendingOrder(_filteredListOfProducts);
 
     this.isFlag = false;
   }
