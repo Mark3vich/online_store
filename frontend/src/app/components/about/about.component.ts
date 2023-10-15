@@ -10,10 +10,15 @@ import { SearchService } from 'src/app/shared/services/search.service';
 })
 export class AboutComponent {
   @Input() product: string = "";
+  @Input() fromWhatPrice!: number;
+  @Input() upToWhatPrice!: number;
+
   public products: Products[] = [];
+  public filteredListOfProducts: Products[] = [];
 
   public condition: boolean = false;
   public enablingTheContainer: boolean = false;
+  public isFlag: boolean = true;
 
   constructor(private searchService: SearchService, private productsService: ProductsService) {}
 
@@ -34,5 +39,27 @@ export class AboutComponent {
 
     // визуальные эффекты
     this.changeTheButtonState();
+  }
+
+  isThePriceSuitable(fromWhatPrice: number, upToWhatPrice: number, price: number): boolean {
+    return (price >= fromWhatPrice && price <= upToWhatPrice) ? true : false;
+  }
+
+  // sortDataInAscendingOrder() {
+
+  // }
+
+  priceFiltering(): void {
+    this.changeTheButtonState();
+
+    let _filteredListOfProducts: Products[] = [];
+
+    this.products.map(p => 
+      this.isThePriceSuitable(this.fromWhatPrice, this.upToWhatPrice, p.price) ? _filteredListOfProducts.push(p) : null
+    );
+
+    this.filteredListOfProducts = _filteredListOfProducts;
+
+    this.isFlag = false;
   }
 }
