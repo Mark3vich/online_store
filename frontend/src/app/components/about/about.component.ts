@@ -45,6 +45,32 @@ export class AboutComponent {
     return (price >= fromWhatPrice && price <= upToWhatPrice) ? true : false;
   }
 
+  _sortDataInAscendingOrder() {
+    for(let i = 0; i < this.products.length; i++) {
+      let current: number = this.products[i].price;  
+      let j: number = i - 1; 
+      while ((j > -1) && (current < this.products[j].price)) { 
+        this.products[j+1].price = this.products[j].price; 
+        j--; 
+      } 
+      this.products[j+1].price = current; 
+    }
+    this.filteredListOfProducts = this.products;
+  }
+
+  _sortDataInDescendingOrder() {
+    for(let i = 0; i < this.products.length; i++) {
+      let current: number = this.products[i].price;  
+      let j: number = i - 1; 
+      while ((j > -1) && (current > this.products[j].price)) { 
+        this.products[j+1].price = this.products[j].price; 
+        j--; 
+      } 
+      this.products[j+1].price = current; 
+    }
+    this.filteredListOfProducts = this.products;
+  }
+
   sortDataInAscendingOrder(array: Products[]) {
     for(let i = 0; i < array.length; i++) {
       let current: number = array[i].price;  

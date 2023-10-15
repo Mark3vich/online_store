@@ -22,9 +22,7 @@
   margin-bottom: 15px;
 }
 
-.resetting_certain_styles {
-  margin-right: 50px;
-}
+
 
 .from_what_price {
   width: 80px;
@@ -134,14 +132,17 @@ body{
   background-color: $baby-blue;
 }
 
+.position-bubbly-button {
+  margin-left: 15px;
+  padding-right: 15px;
+}
+
 .bubbly-button{
   font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 1em;
   text-align: center;
   vertical-align: middle;
   width: 90px;
-  margin-left: 15px;
-  padding-right: 15px;
   -webkit-appearance: none;
   appearance: none;
   background-color: $button-bg;
@@ -151,7 +152,7 @@ body{
   cursor: pointer;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
   box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
-  
+
   &:focus {
     outline: 0;
   }
