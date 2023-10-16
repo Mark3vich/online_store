@@ -26,7 +26,11 @@
             </div>
             <div class="container_price">
                 <input class="from_what_price" [(ngModel)]="fromWhatPrice" placeholder="От " />
-                <input class="up_to_what_price" [(ngModel)]="upToWhatPrice" placeholder="До " />
+                <input class="from_what_price" [(ngModel)]="upToWhatPrice" placeholder="До " />
+            </div>
+            <div>
+                <p class="price">Марка производителя: </p>
+                
             </div>
             <div>
                 <button [className]="condition ? 'bubbly-button animate' : 'bubbly-button'"
@@ -36,26 +40,26 @@
     </div>
     <div *ngIf="isFlag">
         <div class="card" *ngFor="let product of products">
-            <div class="">{{product.article}}</div>
-            <div class="">{{product.productName}}</div>
-            <div class="">{{product.price}}</div>
-            <div class="">{{product.quantity}}</div>
-            <div class="">{{product.description}}</div>
-            <div class="">{{product.manufacturer}}</div>
-            <div class="">{{product.colour}}</div>
-            <div class="">{{product.hashtags}}</div>
+            <div class="">Артикль: {{product.article}}</div>
+            <div class="">Имя товара: {{product.productName}}</div>
+            <div class="">Цена: {{product.price}}</div>
+            <div class="">Колличество: {{product.quantity}}</div>
+            <div class="">Описание товара: {{product.description}}</div>
+            <div class="">Производитель: {{product.manufacturer}}</div>
+            <div class="">Цвет: {{product.colour}}</div>
+            <div class="">Хештеги: {{product.hashtags}}</div>
         </div>
     </div>
     <div *ngIf="!isFlag">
         <div class="card" *ngFor="let product of filteredListOfProducts"  >
-            <div class="">{{product.article}}</div>
-            <div class="">{{product.productName}}</div>
-            <div class="">{{product.price}}</div>
-            <div class="">{{product.quantity}}</div>
-            <div class="">{{product.description}}</div>
-            <div class="">{{product.manufacturer}}</div>
-            <div class="">{{product.colour}}</div>
-            <div class="">{{product.hashtags}}</div>
+            <div class="">Артикль: {{product.article}}</div>
+            <div class="">Имя товара: {{product.productName}}</div>
+            <div class="">Цена: {{product.price}}</div>
+            <div class="">Колличество: {{product.quantity}}</div>
+            <div class="">Описание товара: {{product.description}}</div>
+            <div class="">Производитель: {{product.manufacturer}}</div>
+            <div class="">Цвет: {{product.colour}}</div>
+            <div class="">Хештеги: {{product.hashtags}}</div>
         </div>
     </div>
 </div>

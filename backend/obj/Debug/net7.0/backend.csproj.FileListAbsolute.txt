@@ -84,3 +84,4 @@ C:\Users\Ryzen\project1\course_paper\backend\obj\Debug\net7.0\refint\backend.dll
 C:\Users\Ryzen\project1\course_paper\backend\obj\Debug\net7.0\backend.pdb
 C:\Users\Ryzen\project1\course_paper\backend\obj\Debug\net7.0\backend.genruntimeconfig.cache
 C:\Users\Ryzen\project1\course_paper\backend\obj\Debug\net7.0\ref\backend.dll
+C:\Users\79202\OneDrive\Документы\kursach\backend\bin\Debug\net7.0\backend.staticwebassets.runtime.json

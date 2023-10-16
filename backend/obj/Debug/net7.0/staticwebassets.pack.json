@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\58aefac1c869e092af51ee68.png",
+      "PackagePath": "staticwebassets\\images\\58aefac1c869e092af51ee68.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Alcatel.png",
+      "PackagePath": "staticwebassets\\images\\Alcatel.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Arcticsky_9.png",
+      "PackagePath": "staticwebassets\\images\\Arcticsky_9.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Asus.png",
+      "PackagePath": "staticwebassets\\images\\Asus.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Htc.png",
+      "PackagePath": "staticwebassets\\images\\Htc.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Huawei.png",
+      "PackagePath": "staticwebassets\\images\\Huawei.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Lg.png",
+      "PackagePath": "staticwebassets\\images\\Lg.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Meizu.png",
+      "PackagePath": "staticwebassets\\images\\Meizu.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Motorola.png",
+      "PackagePath": "staticwebassets\\images\\Motorola.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Nokia.png",
+      "PackagePath": "staticwebassets\\images\\Nokia.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Samsung.png",
+      "PackagePath": "staticwebassets\\images\\Samsung.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Sony.png",
+      "PackagePath": "staticwebassets\\images\\Sony.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\Xiaomi.png",
+      "PackagePath": "staticwebassets\\images\\Xiaomi.png"
+    },
+    {
+      "Id": "C:\\Users\\79202\\OneDrive\\Документы\\kursach\\backend\\wwwroot\\images\\iphone.png",
+      "PackagePath": "staticwebassets\\images\\iphone.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.backend.props",
+      "PackagePath": "build\\backend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.backend.props",
+      "PackagePath": "buildMultiTargeting\\backend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.backend.props",
+      "PackagePath": "buildTransitive\\backend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -11,5 +11,6 @@ namespace backend.Models
         public string Manufacturer {get; set;} = string.Empty;
         public string Colour {get; set;} = string.Empty;
         public string Hashtags { get; set; } = string.Empty;
+        public string images { get; set;} = string.Empty;
     }
 }

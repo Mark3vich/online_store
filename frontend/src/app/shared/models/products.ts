@@ -8,4 +8,5 @@ export class Products {
     manufacturer: string = "";
     colour: string = "";
     hashtags: string = "";
+    images: string = "";
 }

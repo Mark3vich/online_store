@@ -34,7 +34,7 @@ export class AboutComponent {
     ,1500);
   }
 
-  sendProductData(product: string) {
+  sendProductData(product: string): void {
     this.searchService.getProduct(product).subscribe((result: Products[]) => (this.products = result));  
 
     // визуальные эффекты
@@ -45,33 +45,21 @@ export class AboutComponent {
     return (price >= fromWhatPrice && price <= upToWhatPrice) ? true : false;
   }
 
-  _sortDataInAscendingOrder() {
-    for(let i = 0; i < this.products.length; i++) {
-      let current: number = this.products[i].price;  
-      let j: number = i - 1; 
-      while ((j > -1) && (current < this.products[j].price)) { 
-        this.products[j+1].price = this.products[j].price; 
-        j--; 
-      } 
-      this.products[j+1].price = current; 
-    }
+  _sortDataInAscendingOrder(): void {
+    this.products.sort(function(obj1, obj2) {
+      return obj1.price-obj2.price;
+    })
     this.filteredListOfProducts = this.products;
   }
 
-  _sortDataInDescendingOrder() {
-    for(let i = 0; i < this.products.length; i++) {
-      let current: number = this.products[i].price;  
-      let j: number = i - 1; 
-      while ((j > -1) && (current > this.products[j].price)) { 
-        this.products[j+1].price = this.products[j].price; 
-        j--; 
-      } 
-      this.products[j+1].price = current; 
-    }
+  _sortDataInDescendingOrder(): void {
+    this.products.sort(function(obj1, obj2) {
+      return obj2.price-obj1.price;
+    })
     this.filteredListOfProducts = this.products;
   }
 
-  sortDataInAscendingOrder(array: Products[]) {
+  sortDataInAscendingOrder(array: Products[]): Products[] {
     for(let i = 0; i < array.length; i++) {
       let current: number = array[i].price;  
       let j: number = i - 1; 
@@ -82,6 +70,10 @@ export class AboutComponent {
       array[j+1].price = current; 
     }
     return array;
+  }
+
+  sortDataByBrand(): void {
+    
   }
 
   priceFiltering(): void {
