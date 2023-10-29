@@ -11,10 +11,12 @@ export class SearchService {
   private url: string = "Search";
   constructor(private http: HttpClient) { }
   public getProduct(param: string): Observable<Products[]> { 
-    param = param.replace(/\s/g, "");
     for(let i = 0; i < param.length; i++) {
       if(param[i] === "#") {
         param = param.replace("#", "%23");
+      }
+      if(param[i] === ' ') {
+        param = param.replace(' ', "%20");
       }
     }
     return this.http.get<Products[]>(`${environments.apiUrl}/${this.url}?searchString=${param}`);

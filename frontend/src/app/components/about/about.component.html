@@ -24,18 +24,27 @@
                     </svg>
                 </button>
             </div>
+            <div class="price">Выбрать диапазон цены:</div>
             <div class="container_price">
                 <input class="from_what_price" [(ngModel)]="fromWhatPrice" placeholder="От " />
                 <input class="from_what_price" [(ngModel)]="upToWhatPrice" placeholder="До " />
             </div>
             <div>
-                <p class="price">Марка производителя: </p>
-                
-            </div>
-            <div>
                 <button [className]="condition ? 'bubbly-button animate' : 'bubbly-button'"
                 (click)="priceFiltering();">Применить</button>
             </div>
+            <br>
+            <div>
+                <p class="price">Сортировать от а до я:</p>
+                <button (click)="sortFromAToZ()" class="btn_filter_price">Применить</button>
+            </div>
+            <!-- <div *ngIf="didTheDataLoad()">
+                <p class="price">Цвет: </p>
+                {{getColors()}}
+                <div *ngFor="let hashtag of hashtags">
+                    <div>{{hashtag}}</div>
+                </div>
+            </div> -->
         </div>
     </div>
     <div *ngIf="isFlag">

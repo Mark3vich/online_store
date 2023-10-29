@@ -15,6 +15,7 @@ export class AboutComponent {
 
   public products: Products[] = [];
   public filteredListOfProducts: Products[] = [];
+  public hashtags: Array<string | undefined> = [];
 
   public condition: boolean = false;
   public enablingTheContainer: boolean = false;
@@ -39,6 +40,11 @@ export class AboutComponent {
 
     // визуальные эффекты
     this.changeTheButtonState();
+
+
+    setTimeout(() =>
+      this.didTheDataLoad()
+    ,1500);
   }
 
   isThePriceSuitable(fromWhatPrice: number, upToWhatPrice: number, price: number): boolean {
@@ -60,20 +66,59 @@ export class AboutComponent {
   }
 
   sortDataInAscendingOrder(array: Products[]): Products[] {
-    for(let i = 0; i < array.length; i++) {
-      let current: number = array[i].price;  
-      let j: number = i - 1; 
-      while ((j > -1) && (current < array[j].price)) { 
-        array[j+1].price = array[j].price; 
-        j--; 
-      } 
-      array[j+1].price = current; 
-    }
+    array.sort(function(obj1, obj2) {
+      return obj1.price-obj2.price;
+    })
     return array;
   }
 
-  sortDataByBrand(): void {
-    
+  sortFromAToZ(): void { 
+    this.products.sort(function(obj1, obj2) {
+      if (obj1.productName < obj2.productName) return -1;
+      if (obj1.productName > obj2.productName) return 1;
+      return 0;
+    })
+    this.filteredListOfProducts = this.products;
+  }
+
+  didTheDataLoad(): boolean {
+    return true;
+  }
+
+  hasDuplicates(array: string) {
+    return (new Set(array)).size !== array.length;
+  }
+
+  giveTheColorBy(product: string, hashtags: Array<string | undefined>): void {
+    let count: number = 0;
+    let hashtag: string = "";
+    for(let i = 0; i < product.length; i++) {
+      if(count === 1) { 
+        hashtag += product[i];
+      }
+      if(product[i] === ',') {
+        count++;
+      } 
+      if(count === 2) { 
+        if(hashtags.length === 0 || this.hasDuplicates(hashtag.slice(0, -1))) {
+          hashtags.push(hashtag.slice(0, -1))
+        }
+      }
+    } 
+  }
+
+  getColors(): Array<string | undefined> {
+    let hashtags: Array<string | undefined> = []
+    this.products.map(p => this.giveTheColorBy(p.hashtags, hashtags));
+    return hashtags;
+  }
+
+  sortByBudget(): void {
+
+  }
+
+  sortByPremium(): void {
+
   }
 
   priceFiltering(): void {

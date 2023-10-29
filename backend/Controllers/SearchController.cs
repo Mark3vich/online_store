@@ -10,7 +10,9 @@ namespace backend.Controllers
     public class SearchController : ControllerBase
     {
         private readonly DataContext _context;
-        public SearchController(DataContext context) {
+
+        public SearchController(DataContext context)
+        {
             _context = context;
         }
 
@@ -28,20 +30,19 @@ namespace backend.Controllers
             searchString = searchString.ToLower();
             searchString = Regex.Replace(searchString, @"\s+", " ");
 
-            string hashtags = "";
-            string hashtags2 = "";
-            string productName = "";
-
             //Исключение повторяющихся слов
             HashSet<string> str = new HashSet<string>();
             string[] data = searchString.Split(' ');
             for (int i = 0; i < data.Length; i++)
             {
-                str.Add(data[i] + ",");
+                str.Add(data[i]);
             }
 
-            searchString = string.Join("", str);
-            searchString = searchString.Replace(",", " ");
+            searchString = string.Join(" ", str);
+
+            string hashtags = "";
+            string hashtags2 = "";
+            string productName = "";
 
             int spaceCounter = 0;
 
@@ -57,9 +58,8 @@ namespace backend.Controllers
 
             while (spaceCounter >= 0)
             {
-                //#премиум #Белый Samsung
                 string temp = searchString.Split()[spaceCounter];
-                if (temp.Contains('#'))
+                if (temp.Contains('#') && _context.MobilePhones.Any(p => p.Hashtags.ToLower().Contains(temp)))
                 {
                     hashtagsCounter++;
                     if (hashtagsCounter <= 1)
@@ -71,7 +71,7 @@ namespace backend.Controllers
                         hashtags2 = temp;
                     }
                 }
-                else
+                else if (_context.MobilePhones.Any(p => p.ProductName.ToLower().Contains(temp)))
                 {
                     productName = temp;
                 }
@@ -81,9 +81,9 @@ namespace backend.Controllers
 
             var products = _context.MobilePhones;
 
-            if(hashtags != "" && hashtags2 != "" && productName != "")
+            if (hashtags != "" && hashtags2 != "" && productName != "")
             {
-                var threeOptions = products.Where(u => u.Hashtags.ToLower().Contains(hashtags) && u.Hashtags.ToLower().Contains(hashtags2) && u.ProductName.ToLower().Contains(productName));
+                var threeOptions = products.Where(u =>( u.Hashtags.ToLower().Contains(hashtags) && u.Hashtags.ToLower().Contains(hashtags2) && u.ProductName.ToLower().Contains(productName)));
 
                 return Ok(threeOptions);
             }
@@ -93,7 +93,7 @@ namespace backend.Controllers
 
                 return Ok(twoOptions);
             }
-            else if (hashtags != "" && productName != "")
+            else if (hashtags != "" || productName != "")
             {
                 var twoOptions = products.Where(u => u.Hashtags.ToLower().Contains(hashtags) && u.ProductName.ToLower().Contains(productName));
 
@@ -113,4 +113,6 @@ namespace backend.Controllers
             return Ok(oneOption);
         }
     }
+
+
 }
