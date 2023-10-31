@@ -14,8 +14,10 @@
  **PowerShall//Git Bash**
  1.1) Перейти в папку **frontend** в терминале. Это можно сделать с помощью данной команды: **cd frontend**.
  ![1323232](https://github.com/Mark3vich/course_paper/assets/127986058/4b241470-edfe-4559-bc0b-3f520c043952)
+ 
  1.2)  Либо через Shift + RMB в папке frontend
 ![afsfasfsafas](https://github.com/Mark3vich/course_paper/assets/127986058/2fe214d6-c77e-4fdd-ba24-90c222917983)
+
  2) Написать команду: **ng serve -o**. Будет развернут проект в браузере по ссылке: **http://localhost:4200/**
  3) Выйти из папки **frontend** с помощью данной команды: **cd ../**
  4) Перейти в папку **backend** в терминале. Это можно сделать с помощью данной команды: **cd backend**
